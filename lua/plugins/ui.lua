@@ -31,10 +31,10 @@ return {
       options = {
         disabled_filetypes = {
           "alpha",
+          "grug-far",
           "neo-tree",
           "oil",
           "Outline",
-          "grug-far",
           "trouble",
           "undotree",
         },

@@ -52,7 +52,10 @@ return {
     opts = {},
     config = function(_, opts)
       require("telescope").setup(opts)
-      require("telescope").load_extension("fzf")
+      local has_fzf, _ = pcall(require, "telescope._extensions.fzf")
+      if has_fzf then
+        require("telescope").load_extension("fzf")
+      end
       require("telescope").load_extension("projects")
     end,
     keys = {
@@ -98,13 +101,13 @@ return {
       delay = 200,
       filetypes_denylist = {
         "alpha",
+        "grug-far",
         "help",
         "lazy",
         "mason",
         "neo-tree",
         "noice",
         "Outline",
-        "grug-far",
         "TelescopePrompt",
         "Trouble",
         "undotree",
